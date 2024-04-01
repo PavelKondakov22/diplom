@@ -1,0 +1,30 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+[nginx]
+nginx-1 ansible_host=192.168.10.30
+nginx-2 ansible_host=192.168.20.32
+
+[zabbixserver]
+zabbix-server ansible_host=192.168.10.37
+
+[elastic]
+elasticsearch ansible_host=192.168.10.4
+
+[kibana]
+kibana1 ansible_host=192.168.10.11
+
+[filebeat]
+nginx-1 ansible_host=192.168.10.30 
+nginx-2 ansible_host=192.168.20.32 
+
+[all:vars]
+ansible_ssh_user=pavel
+ansible_ssh_private_key_file=/home/pavel/.ssh/id_ed25519

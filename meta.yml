@@ -1,0 +1,9 @@
+#cloud-config
+users:
+- name: pavel
+  groups: sudo
+  shell: /bin/bash
+  sudo: 'ALL=(ALL) NOPASSWD:ALL'
+  ssh-authorized-keys:
+    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMk3ICqSMdtXjHy3mSre8bxqtYiTA7sme5ZYd+XNqkFl = pavel@bastion
+
