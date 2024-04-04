@@ -166,7 +166,7 @@ nginx1 и nginx2
   
 Как и писал ранее snapshot дисков всех ВМ прописано в файле  
 markdown  
-(https://github.com/PavelKondakov22/diplom/blob/main/files/snapshot.tf) .  
+![snapshot](https://github.com/PavelKondakov22/diplom/blob/main/files/snapshot.tf) .  
 Время жизни snaphot ограничено в неделю. Сами snaphot настроены на ежедневное копирование.  
 
 
