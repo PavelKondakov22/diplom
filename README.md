@@ -110,27 +110,61 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 # Решение 
 
-Если начинать с начала то, развёртка инфраструктуры осуществлялась по средствам Terraform и Ansible. Плясать будем от bastion.  
-![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%201%20vm.png)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+Если начинать с начала то, развёртка инфраструктуры осуществлялась по средствам Terraform и Ansible. Плясать будем от bastion.    
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%201%20vm.png)  
 
-С ним же поднимаем сеть, balancer, а так же ВМ на будущее: kibana, elastic, zabbix, nginx-1 и nginx-2. Единственное, что втанет позже это snapshot. Т.К. используются идентификаторы дисков, а получить мы их сможем только после создания. Snapshot будет делаться в последнюю очередь.
-Ставим на bastion ansible и продолжаем ставить инфраструктуру 
+С ним же поднимаем сеть, balancer, а так же ВМ на будущее: kibana, elastic, zabbix, nginx-1 и nginx-2.   
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%202%20all.png)     
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/ping%20pong.png)    
+Единственное, что втанет позже это snapshot. Т.К. используются идентификаторы дисков, а получить мы их сможем только после создания. Snapshot будет делаться в последнюю очередь.  
+Ставим на bastion ansible и продолжаем ставить инфраструктуру.  
+nginx1 и nginx2  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%203%20nginx.png)    
+  
+следом тестируем сайт curl -v 158.160.157.103:80  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%204%20curl.png)  
+
+Ставим filebeat, zabbix и zabbix-agent  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%205%20agent%20all.png)  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%206%20zabbix-s.png)   
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2011%20filebeat.png)  
+
+Проверяем zabbix http://51.250.81.246:8080/  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%207%20zab.png)  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2012%20all%20machine%20zabbix.png)  
+
+Ставим Elasticsearch и проверяем  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%208%20el.png)  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%209%20elas.png)  
+
+Ставим Kibana и проверяем 
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2010%20kibana.png)  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2014%20elastic.png)  
+
+Дашборды  
+
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2013%20dashboard.png)  
+
+Переходим к созданию групп безопасности  
+**SSH security group** для bastion  
+Входящий  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2015%20ssh%20v.png)  
+Исходящий  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2016%20sg%20i.png)  
+
+**Open security group** для Zabbix, Kibana, application load balancer  
+Входящий  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2017%20sg%20v.png)  
+Исходящий  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2018%20i.png)  
+
+**Private security group** для nginx, Elasticsearch  
+Входящий  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2019%20v.png)  
+Исходящий  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2020%20i.png)  
+  
+Как и писал ранее snapshot дисков всех ВМ прописано в файле ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/files/snapshot.tf) .  
+Время жизни snaphot ограничено в неделю. Сами snaphot настроены на ежедневное копирование.  
+
 
