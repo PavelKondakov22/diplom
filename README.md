@@ -164,7 +164,9 @@ nginx1 и nginx2
 Исходящий  
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2020%20i.png)  
   
-Как и писал ранее snapshot дисков всех ВМ прописано в файле ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/files/snapshot.tf) .  
+Как и писал ранее snapshot дисков всех ВМ прописано в файле  
+markdown  
+(https://github.com/PavelKondakov22/diplom/blob/main/files/snapshot.tf) .  
 Время жизни snaphot ограничено в неделю. Сами snaphot настроены на ежедневное копирование.  
 
 
