@@ -8,7 +8,7 @@
 }
  
 provider "yandex" {
-  token     = "y0_AgAAAAAnkANdAATuwQAAAADwXHQY_w1S1pu3QT-9VbpWj_ghPoyYX7w"
+  token     =
   cloud_id  = "${var.yandex_cloud_id}"
   folder_id = "${var.yandex_folder_id}"
   zone      = "ru-central1-a"
