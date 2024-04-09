@@ -125,7 +125,7 @@ resource "yandex_compute_instance" "nginx-1" {
   }
   network_interface {
     subnet_id = yandex_vpc_subnet.subnet-a.id
-    nat = true
+    nat = false
     security_group_ids = [yandex_vpc_security_group.nginx.id]
   }
   metadata = {
@@ -153,7 +153,7 @@ resource "yandex_compute_instance" "nginx-2" {
   }
   network_interface {
     subnet_id = yandex_vpc_subnet.subnet-b.id
-    nat = true
+    nat = false
     security_group_ids = [yandex_vpc_security_group.nginx.id]
   }
   metadata = {
