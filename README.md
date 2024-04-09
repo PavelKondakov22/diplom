@@ -111,7 +111,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 # Решение 
 
 Если начинать с начала то, развёртка инфраструктуры осуществлялась по средствам Terraform и Ansible. Плясать будем от bastion.    
-![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%201%20vm.png)  
+![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new1.png)  
 
 С ним же поднимаем сеть, balancer, а так же ВМ на будущее: kibana, elastic, zabbix, nginx-1 и nginx-2.   
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%202%20all.png)     
