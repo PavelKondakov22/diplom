@@ -128,7 +128,7 @@ nginx1 и nginx2
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%206%20zabbix-s.png)   
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2011%20filebeat.png)  
 
-Проверяем zabbix http://51.250.81.246:8080/  
+Проверяем zabbix http://158.160.99.59:8080/  
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%207%20zab.png)  
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%2012%20all%20machine%20zabbix.png)  
 
