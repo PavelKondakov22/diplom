@@ -14,10 +14,6 @@ resource "yandex_compute_snapshot_schedule" "mysnapshot" {
 
   retention_period = "168h"
 
-  disk_ids = ["epdn184ojqms8sn8vep9", 
-             "fhm7btgk8jmbu3oba52j",
-             "fhmf76ejv0jjfp9b6tkc",
-             "fhmll00s89h8rodhvgs5",
-             "fhmt7ta5v8plisfa6v3d",
-             "fhmu0i18cp8sqogkd6qg"]
+  disk_ids = [ yandex_compute_instance.nginx-1.boot_disk.0.disk_id, yandex_compute_instance.nginx-2.boot_disk.0.disk_id, yandex_compute_instance.bastion.boot_disk.0.disk_id, yandex_compute_instance.elastic.boot_disk.0.disk_id, yandex_compute_instance.kibana.boot_disk.0.disk_id, yandex_compute_instance.zabbix.boot_disk.0.disk_id]
+           
 }
