@@ -116,7 +116,6 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 С ним же поднимаем сеть, balancer, а так же ВМ на будущее: kibana, elastic, zabbix, nginx-1 и nginx-2.   
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%202%20all.png)     
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/ping%20pong.png)    
-Единственное, что втанет позже это snapshot. Т.К. используются идентификаторы дисков, а получить мы их сможем только после создания. Snapshot будет делаться в последнюю очередь.  
 Ставим на bastion ansible и продолжаем ставить инфраструктуру.  
 nginx1 и nginx2  
 ![alt text](https://github.com/PavelKondakov22/diplom/blob/main/screenshots/new%203%20nginx.png)    
