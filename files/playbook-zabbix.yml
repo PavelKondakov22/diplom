@@ -4,8 +4,12 @@
   become: yes
   gather_facts: true
 #--------Переменные--------
-  vars:   
-    mysql_password: 123456
+  vars_files:
+    - "secrets.yml"
+  tasks:
+    - name: Print MySQL password
+      debug:
+        msg: "MySQL Password is {{ mysql_password }}"
 #--------------------------
   tasks:
 #--------Загрузка дистрибутива zabbix и установка--------
